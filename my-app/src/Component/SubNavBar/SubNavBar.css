@@ -1,0 +1,40 @@
+.ub-nav-bar-main-div {
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+.sub-nav-bar-width-div{
+    width: 100%;
+    
+}
+
+.sub-nav-main-flex-div{
+    padding: 0px;
+    background-color: #232f3e;
+    
+}
+
+.sub-nav-bar-for-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 35px;
+}
+
+.sub-nav-main-content-div{
+    display: flex;
+    padding: 6px;
+    cursor: pointer;
+    left: 0px;
+    gap: 2px;
+}
+.sub-nav-main-content-div:hover{
+    border: 1px solid white;
+}
+.sub-nav-main-content-div p{
+    margin: 0px;
+    color:  white;
+    font-size: 14px;
+}

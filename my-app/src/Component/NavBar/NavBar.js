@@ -8,7 +8,6 @@ import { BsSearch, BsFlag, BsCart4 } from "react-icons/bs";
 const NavBar = () => {
   return (
     <div className="main-website-div">
-
       <div className="nav-bar-main-div">
         <div className="nav-bar-width-div">
           <div className="nav-bar-main-before-flex-div">
@@ -60,13 +59,12 @@ const NavBar = () => {
               <div className="sign-in-main-div-one">
                 <div className="sign-in-main-div-sub-one">
                   <p>Hello, Sign in</p>
+                  <h3>Accounts & Lists</h3>
+                  {/* <IoMdArrowDropdown /> */}
                 </div>
-                <div className="sign-in-main-div-two">
-                  <div className="sign-in-main-div-two-one">
-                    <h3>Accounts & Lists</h3>
-                  </div>
-                  <IoMdArrowDropdown />
-                </div>
+                {/* <div className="sign-in-main-div-two">
+                  <div className="sign-in-main-div-two-one"></div>
+                </div> */}
               </div>
 
               <div className="return-nd-order-main-div">
@@ -85,7 +83,7 @@ const NavBar = () => {
         </div>
       </div>
 
-      <div className="nav-progressive-content-main-div">
+      {/* <div className="nav-progressive-content-main-div">
         <div className="nav-progressive-content-width-div">
          <div className="nav-progressive-content-main-before-flex-div"> 
          <div className="nav-progressive-content-for-flex">
@@ -93,7 +91,7 @@ const NavBar = () => {
          </div>
          </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
