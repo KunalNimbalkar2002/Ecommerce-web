@@ -4,14 +4,29 @@ import "./ProductsHomePage.css";
 
 const ProductsHomePage = () => {
   const [products, setproducts] = useState([]);
+  const [printProducts, setprintProducts] = useState([]);
 
   useEffect(() => {
     axios.get("https://fakestoreapi.com/products").then((response) => {
       setproducts(response.data);
+      setprintProducts(response.data);
     });
 
-    console.log("products:::::", products);
+    // console.log("products:::::", products);
   }, []);
+
+  const AllCategory = products
+    .map((index) => index.category)
+    .filter((value, index, self) => self.indexOf(value) === index);
+
+  //single onclick filter
+  const handleCategoryName = (categoryselect) => {
+    const FilteredProducts = products.filter(
+      (productsfilterbycategory) =>
+        productsfilterbycategory.category === categoryselect
+    );
+    setprintProducts(FilteredProducts);
+  };
 
   return (
     <div className="ProductsHomePage-flex-div">
@@ -19,14 +34,24 @@ const ProductsHomePage = () => {
         <div className="ProductsHomePage-main-div">
           <div className="ProductsHomePage-main-div-one">
             <div className="ProductsHomePage-main-div-one-padding">
-              <p>Filters</p>
+              {AllCategory &&
+                AllCategory?.map((index) => (
+                  <div style={{ textAlign: "left" }}>
+                    <h1
+                      style={{ fontSize: "19px", cursor: "pointer" }}
+                      onClick={(e) => handleCategoryName(index)}
+                    >
+                      {index}
+                    </h1>
+                  </div>
+                ))}
             </div>
           </div>
 
           <div className="ProductsHomePage-main-div-two">
             <div className="ProductsHomePage-main-div-two-for-flex">
-              {products &&
-                products?.map((index) => (
+              {printProducts &&
+                printProducts?.map((index) => (
                   <div classname="products-card-main-div-one">
                     <div classname="products-card-div-fo-img">
                       <img
